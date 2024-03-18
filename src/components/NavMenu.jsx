@@ -13,7 +13,7 @@ export function NavMenu() {
         <div className="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
           <nav
             aria-label="main navigation"
-            className="flex h-[5.5rem] items-stretch justify-between font-medium text-slate-700"
+            className="flex h-[5.5rem] items-stretch justify-between font-medium text-slate-100"
             role="navigation"
           >
             {/*      <!-- Brand logo --> */}
@@ -45,7 +45,7 @@ export function NavMenu() {
                   fill="rgba(255,255,255,.2)"
                 />
               </svg>
-              Brand
+              PowerGen
             </a>
             {/*      <!-- Mobile trigger --> */}
             <button
