@@ -6,10 +6,14 @@ import { Link } from "react-scroll";
 export function NavMenu() {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
 
+  const closeMenu = () => {
+    setIsToggleOpen(false);
+  };
+
   return (
     <div>
       {/*<!-- Component: Basic Navbar --> */}
-      <header className="fixed top-0 border-b-1 z-20 w-full backdrop-blur-sm shadow-lg shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full after:bg-slate-200  lg:backdrop-blur-sm lg:after:hidden">
+      <header className=" fixed top-0 z-50 w-full backdrop-blur-sm shadow-lg shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full lg:backdrop-blur-sm lg:after:hidden">
         <div className="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
           <nav
             aria-label="main navigation"
@@ -68,14 +72,15 @@ export function NavMenu() {
               aria-label="Select page"
               className={`absolute top-0 left-0 z-[-1] h-[28.5rem] w-full justify-center overflow-hidden  overflow-y-auto overscroll-contain bg-white/90 px-8 pb-12 pt-24 font-medium transition-[opacity,visibility] duration-300 lg:visible lg:relative lg:top-0  lg:z-0 lg:flex lg:h-full lg:w-auto lg:items-stretch lg:overflow-visible lg:bg-white/0 lg:px-0 lg:py-0  lg:pt-0 lg:opacity-100 ${
                 isToggleOpen
-                  ? "visible opacity-100 backdrop-blur-sm"
+                  ? "visible opacity-100 backdrop-blur-sm bg-slate-800 flex flex-col items-center"
                   : "invisible opacity-0"
               }`}
             >
               <Link
                 spy={true}
                 smooth={true}
-                to="Home"
+                to="home"
+                onClick={closeMenu}
                 className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8 cursor-pointer"
               >
                 <li role="none" className="flex items-stretch justify-center">
@@ -85,7 +90,8 @@ export function NavMenu() {
               <Link
                 spy={true}
                 smooth={true}
-                to="Home"
+                to="about"
+                onClick={closeMenu}
                 className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8 cursor-pointer"
               >
                 <li role="none" className="flex items-stretch justify-center">
