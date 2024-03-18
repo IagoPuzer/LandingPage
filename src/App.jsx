@@ -141,12 +141,12 @@ export function App() {
             Nossos Serviços
           </h2>
           <div className="grid grid-cols-3 gap-4">
-            {services.map((card, index) => (
+            {services.map((service, index) => (
               <Cards
                 key={index}
-                icon={card.icon}
-                title={card.title}
-                description={card.description}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
               />
             ))}
           </div>
