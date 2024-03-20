@@ -5,15 +5,29 @@ import { Link } from "react-scroll";
 
 export function NavMenu() {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
+  const [changeBackground, setChangeBackground] = useState(false);
 
   const closeMenu = () => {
     setIsToggleOpen(false);
   };
 
+  window.onscroll = () => {
+    if (!changeBackground && window.pageYOffset > 150) {
+      setChangeBackground(true);
+    }
+    if (changeBackground && window.pageYOffset <= 150) {
+      setChangeBackground(false);
+    }
+  };
+
   return (
     <div>
       {/*<!-- Component: Basic Navbar --> */}
-      <header className=" fixed top-0 z-50 w-full backdrop-blur-sm shadow-lg shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full lg:backdrop-blur-sm lg:after:hidden">
+      <header
+        className={`fixed top-0 z-50 w-full ${
+          changeBackground ? "bg-gray-300/80" : ""
+        } backdrop-blur-sm shadow-lg shadow-slate-700/5 after:absolute after:top-full after:left-0 after:z-10 after:block after:h-px after:w-full lg:backdrop-blur-sm lg:after:hidden`}
+      >
         <div className="relative mx-auto max-w-full px-6 lg:max-w-5xl xl:max-w-7xl 2xl:max-w-[96rem]">
           <nav
             aria-label="main navigation"
@@ -101,11 +115,11 @@ export function NavMenu() {
               <Link
                 spy={true}
                 smooth={true}
-                to="Home"
+                to="services"
                 className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8 cursor-pointer"
               >
                 <li role="none" className="flex items-stretch justify-center">
-                  <span>Projetos</span>
+                  <span>Serviços</span>
                 </li>
               </Link>
               <Link
