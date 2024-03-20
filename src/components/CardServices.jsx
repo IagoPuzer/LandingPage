@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export function Cards({ icon, title, description }) {
+export function CardServices({ icon, title, description }) {
   return (
     <div>
       <div className="overflow-hidden text-center bg-white rounded shadow-md text-slate-500 shadow-slate-200 w-[300px]">
@@ -15,7 +15,7 @@ export function Cards({ icon, title, description }) {
 }
 
 // Adicionando PropTypes para as propriedades
-Cards.propTypes = {
+CardServices.propTypes = {
   icon: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
