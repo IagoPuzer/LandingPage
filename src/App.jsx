@@ -217,26 +217,54 @@ export function App() {
           <h2 className="flex justify-center text-2xl font-semibold mb-6">
             Nossos projetos
           </h2>
-          <div className="grid grid-cols-3 gap-4">
-            {projects.map((project, index) => (
-              <CardProjects
-                key={index}
-                image={project.image}
-                title={project.title}
-                description={project.description}
-                onClick={() => openModal(project)}
-              />
-            ))}
+          <div className="flex flex-col">
+            <div className="grid grid-cols-3 gap-4">
+              {projects.map((project, index) => (
+                <CardProjects
+                  key={index}
+                  image={project.image}
+                  title={project.title}
+                  description={project.description}
+                  onClick={() => openModal(project)}
+                />
+              ))}
+            </div>
+            <button className=" mt-6 flex mx-auto items-center justify-center h-12 w-1/3 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none">
+              <span>Conheça todos os nossos projetos</span>
+            </button>
           </div>
-          <button className="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none">
-            <span>Conheça todos os nossos projetos</span>
-          </button>
         </div>
         <ProjectsModal
           isOpen={modalOpen}
           onClose={closeModal}
           project={selectedProject}
         />
+      </section>
+      <section id="contact" className="bg-gray-100">
+        <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 px-8 container mx-auto py-12 ">
+          {/* Coluna do Texto */}
+          <div className="md:w-1/2 space-y-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Conheça a PowerGen
+            </h2>
+            <p className="text-lg text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              fermentum, dolor a pharetra aliquet, arcu mi sollicitudin metus,
+              nec fermentum odio felis vel erat. Duis dignissim tempus arcu non
+              placerat. Vestibulum dapibus fringilla ex nec ultrices.
+            </p>
+            <button className="inline-flex h-8 items-center justify-center gap-2 whitespace-nowrap rounded border border-emerald-500 px-4 text-xs font-medium tracking-wide text-emerald-500 transition duration-300 hover:border-emerald-600 hover:text-emerald-600 focus:border-emerald-700 focus:text-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:text-emerald-300 disabled:shadow-none">
+              <span>Conheça-nos melhor</span>
+            </button>
+          </div>
+          <div className="md:w-1/2">
+            <img
+              src={About}
+              alt="Descrição da Imagem"
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+        </div>
       </section>
     </div>
   );
