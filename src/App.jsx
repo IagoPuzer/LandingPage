@@ -28,7 +28,7 @@ export function App() {
           />
         </svg>
       ),
-      title: "Bonus",
+      title: "serviço 1",
       description:
         "All components come with proper attributes to ensure full accessibility with the WAI-ARIA standards. Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.",
     },
@@ -53,7 +53,7 @@ export function App() {
           />
         </svg>
       ),
-      title: "Bonus",
+      title: "serviço 2",
       description:
         "All components come with proper attributes to ensure full accessibility with the WAI-ARIA standards. Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.",
     },
@@ -78,7 +78,7 @@ export function App() {
           />
         </svg>
       ),
-      title: "Bonus",
+      title: "Serviço 3",
       description:
         "All components come with proper attributes to ensure full accessibility with the WAI-ARIA standards. Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.",
     },
@@ -93,7 +93,7 @@ export function App() {
           className="aspect-video w-full"
         />
       ),
-      title: "Teste",
+      title: "Projeto 1",
       description:
         "All components come with proper attributes to ensure full accessibility with the WAI-ARIA standards. Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.",
     },
@@ -105,7 +105,7 @@ export function App() {
           className="aspect-video w-full"
         />
       ),
-      title: "Teste",
+      title: "Projeto 2",
       description:
         "All components come with proper attributes to ensure full accessibility with the WAI-ARIA standards. Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.",
     },
@@ -117,7 +117,7 @@ export function App() {
           className="aspect-video w-full"
         />
       ),
-      title: "Teste",
+      title: "Projeto 3",
       description:
         "All components come with proper attributes to ensure full accessibility with the WAI-ARIA standards. Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.",
     },
