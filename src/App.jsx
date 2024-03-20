@@ -1,5 +1,6 @@
 import { NavMenu } from "./components/NavMenu";
-import { Cards } from "./components/Cards";
+import { CardServices } from "./components/CardServices";
+import { CardProjects } from "./components/cardProjects";
 import Banner from "./assets/energia.jpg";
 import About from "./assets/about.jpg";
 import { FaWhatsapp } from "react-icons/fa";
@@ -83,13 +84,56 @@ export function App() {
     },
   ];
 
+  const projects = [
+    {
+      image: (
+        <img
+          src="https://picsum.photos/id/101/800/600"
+          alt="card image"
+          className="aspect-video w-full"
+        />
+      ),
+      title: "Teste",
+      description:
+        "All components come with proper attributes to ensure full accessibility with the WAI-ARIA standards. Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.",
+    },
+    {
+      image: (
+        <img
+          src="https://picsum.photos/id/101/800/600"
+          alt="card image"
+          className="aspect-video w-full"
+        />
+      ),
+      title: "Teste",
+      description:
+        "All components come with proper attributes to ensure full accessibility with the WAI-ARIA standards. Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.",
+    },
+    {
+      image: (
+        <img
+          src="https://picsum.photos/id/101/800/600"
+          alt="card image"
+          className="aspect-video w-full"
+        />
+      ),
+      title: "Teste",
+      description:
+        "All components come with proper attributes to ensure full accessibility with the WAI-ARIA standards. Web accessibility means that websites, tools, and technologies are designed and developed so that people with disabilities can use them.",
+    },
+  ];
+
   return (
     <div>
       <NavMenu />
       {/* Hero */}
       <section id="home" className="relative w-full">
         <div className="bg-cover bg-center h-[600px] 2xl:h-[800px] relative">
-          <img src={Banner} alt="" className="w-full h-full object-cover" />
+          <img
+            src={Banner}
+            alt=""
+            className="w-full h-full object-cover shadow-md shadow-slate-200"
+          />
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-20">
             <h1 className="text-3xl leading-10 md:text-5xl font-bold mb-4 md:leading-[60px]">
@@ -108,8 +152,8 @@ export function App() {
         </div>
       </section>
       {/* Fim Hero */}
-      <section id="about" className="container mx-auto py-12">
-        <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 px-8">
+      <section id="about">
+        <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 px-8 container mx-auto py-12 ">
           {/* Coluna da Imagem */}
           <div className="md:w-1/2">
             <img
@@ -135,14 +179,14 @@ export function App() {
           </div>
         </div>
       </section>
-      <section className="container mx-auto py-12">
-        <div className="flex flex-col items-center justify-center space-y-4 md:space-y-0 md:space-x-8 ">
+      <section id="services" className=" bg-gray-100 ">
+        <div className="flex flex-col items-center justify-center space-y-4 md:space-y-0 md:space-x-8 container mx-auto py-12">
           <h2 className="flex justify-center text-2xl font-semibold mb-6">
             Nossos Serviços
           </h2>
           <div className="grid grid-cols-3 gap-4">
             {services.map((service, index) => (
-              <Cards
+              <CardServices
                 key={index}
                 icon={service.icon}
                 title={service.title}
@@ -150,6 +194,26 @@ export function App() {
               />
             ))}
           </div>
+        </div>
+      </section>
+      <section id="projects" className="">
+        <div className="flex flex-col items-center justify-center space-y-4 md:space-y-0 md:space-x-8 container mx-auto py-12">
+          <h2 className="flex justify-center text-2xl font-semibold mb-6">
+            Nossos projetos
+          </h2>
+          <div className="grid grid-cols-3 gap-4">
+            {projects.map((project, index) => (
+              <CardProjects
+                key={index}
+                image={project.image}
+                title={project.title}
+                description={project.description}
+              />
+            ))}
+          </div>
+          <button className="mt-10 inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
+            <span>Conheça todos os nossos projetos</span>
+          </button>
         </div>
       </section>
     </div>
