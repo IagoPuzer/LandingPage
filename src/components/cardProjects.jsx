@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 export function CardProjects({ image, title, description }) {
   return (
     <div>
-      {/*<!-- Component: Basic blog card --> */}
       <div className="overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200">
         {/*  <!-- Image --> */}
         <figure>{image}</figure>
@@ -15,7 +14,6 @@ export function CardProjects({ image, title, description }) {
           <p>{description}</p>
         </div>
       </div>
-      {/*<!-- End Basic blog card --> */}
     </div>
   );
 }
