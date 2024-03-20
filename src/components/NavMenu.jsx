@@ -125,6 +125,16 @@ export function NavMenu() {
               <Link
                 spy={true}
                 smooth={true}
+                to="projects"
+                className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8 cursor-pointer"
+              >
+                <li role="none" className="flex items-stretch justify-center">
+                  <span>Projetos</span>
+                </li>
+              </Link>
+              <Link
+                spy={true}
+                smooth={true}
                 to="Home"
                 className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8 cursor-pointer"
               >
