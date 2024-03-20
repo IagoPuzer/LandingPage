@@ -1,11 +1,27 @@
+import { useState } from "react";
+
 import { NavMenu } from "./components/NavMenu";
 import { CardServices } from "./components/CardServices";
 import { CardProjects } from "./components/cardProjects";
+import { ProjectsModal } from "./components/ProjectsModal";
 import Banner from "./assets/energia.jpg";
 import About from "./assets/about.jpg";
 import { FaWhatsapp } from "react-icons/fa";
 
 export function App() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+    setModalOpen(false);
+  };
+
   const services = [
     {
       icon: (
@@ -144,7 +160,7 @@ export function App() {
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo quos
               molestias officia sint voluptates doloremque magni
             </p>
-            <button className="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
+            <button className="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none">
               <FaWhatsapp />
               <span>Fale conosco</span>
             </button>
@@ -208,13 +224,19 @@ export function App() {
                 image={project.image}
                 title={project.title}
                 description={project.description}
+                onClick={() => openModal(project)}
               />
             ))}
           </div>
-          <button className="mt-10 inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
+          <button className="inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 focus-visible:outline-none">
             <span>Conheça todos os nossos projetos</span>
           </button>
         </div>
+        <ProjectsModal
+          isOpen={modalOpen}
+          onClose={closeModal}
+          project={selectedProject}
+        />
       </section>
     </div>
   );

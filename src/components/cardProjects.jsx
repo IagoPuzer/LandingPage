@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
-
-export function CardProjects({ image, title, description }) {
+export function CardProjects({ image, title, description, onClick }) {
   return (
-    <div>
+    <div onClick={onClick}>
       <div className="overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200">
         {/*  <!-- Image --> */}
         <figure>{image}</figure>
@@ -22,4 +21,5 @@ CardProjects.propTypes = {
   image: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
